@@ -64,7 +64,17 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <Win32Resource>C:\Users\Baruch\Documents\Visual Studio 2012\Projects\TextReverser2\TextReverser2.res</Win32Resource>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'pub|AnyCPU'">
+    <OutputPath>bin\pub\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -87,7 +97,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <!-- <EmbeddedResource Include="Form1.en-US.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource> -->
     <EmbeddedResource Include="Form1.en-US.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.he-IL.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">

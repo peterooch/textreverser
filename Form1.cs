@@ -20,6 +20,7 @@ namespace TextReverser2
         StringBuilder input = new StringBuilder();
         StringBuilder output = new StringBuilder();
         bool ready;
+        string Qexp = "";
         
         public void button1_Click(object sender, EventArgs e)
         {
@@ -41,7 +42,23 @@ namespace TextReverser2
                 }
             }
         }
-        
+
+        public void quickexp(object sender, System.EventArgs e)
+        {
+            MessageBox.Show(Qexp);
+        }
+        public void quickie(object sender, System.EventArgs e)
+        {
+            input.Clear();
+            output.Clear();
+            IDataObject txt = Clipboard.GetDataObject();
+            if (txt.GetDataPresent(DataFormats.Text))
+                input.Append((string)txt.GetData(DataFormats.Text));
+            reverse();
+            Clipboard.SetDataObject(output.ToString());
+            input.Clear();
+            output.Clear();
+        }
         public void savefile(object sender, System.EventArgs e)
         {
             SaveFileDialog savetext = new SaveFileDialog();

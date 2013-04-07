@@ -59,5 +59,14 @@ namespace TextReverser2.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something.
+        /// </summary>
+        internal static string Qexp {
+            get {
+                return ResourceManager.GetString("Qexp", resourceCulture);
+            }
+        }
     }
 }
